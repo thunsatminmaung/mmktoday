@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&family=Cinzel:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-roboto text-gray-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 
+           hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-pink-500 to-purple-500 text-white
+           hover:from-pink-600 hover:to-purple-600
+           focus:ring-purple-500;
+  }
+
+  .card {
+    @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6;
+  }
+
+  .logo-title {
+    @apply font-cinzel text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-600;
+  }
+
+  .contact-card {
+    @apply flex flex-col items-center justify-center p-6 rounded-xl shadow-lg
+           transform transition-all duration-300 hover:scale-105
+           hover:shadow-xl cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .bg-gradient {
+    @apply bg-gradient-to-br from-[#ff7eb3] via-[#ff758c] to-[#7ec9ff];
+    background-size: 300% 300%;
+  }
+
+  .animate-gradient {
+    animation: gradientMove 10s ease infinite;
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
